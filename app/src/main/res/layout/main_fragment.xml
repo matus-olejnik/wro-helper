@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.devmo.wrohelper.screen.main.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainFragmentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".screens.main.MainFragment">
+
+        <AutoCompleteTextView
+            android:id="@+id/issueIdAutoCompleteTextView"
+            android:layout_width="305dp"
+            android:layout_height="86dp"
+            android:hint="@string/issueIdText"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.141" />
+
+        <TextView
+            android:id="@+id/issueMessageTextView"
+            android:layout_width="303dp"
+            android:layout_height="137dp"
+            android:text="@{model.selectedIssue.message}"
+            android:textSize="22sp"
+            android:enabled="false"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.49"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/issueMessageLabelTextView"
+            app:layout_constraintVertical_bias="0.033" />
+
+        <TextView
+            android:id="@+id/issueSolutionTextView"
+            android:layout_width="303dp"
+            android:layout_height="137dp"
+            android:text="@{model.selectedIssue.solution}"
+            android:textSize="22sp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/issueSolutionLabelTextView"
+            app:layout_constraintVertical_bias="0.052" />
+
+        <TextView
+            android:id="@+id/issueMessageLabelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text="@string/issueMessageText"
+            android:textSize="18sp"
+            android:textColor="#4A4A4A"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.267"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/issueIdAutoCompleteTextView"
+            app:layout_constraintVertical_bias="0.032" />
+
+        <TextView
+            android:id="@+id/issueSolutionLabelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:enabled="false"
+            android:text="@string/issueSolutionText"
+            android:textSize="18sp"
+            android:textColor="#4A4A4A"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.277"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/issueMessageTextView"
+            app:layout_constraintVertical_bias="0.061" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
